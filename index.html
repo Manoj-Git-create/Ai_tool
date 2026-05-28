@@ -3,7 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Tools Directory 2026</title>
+<title>AI Search — Find the Right AI Tool for Anything</title>
+<meta name="description" content="AI Search is the ultimate directory of 150+ AI tools in 2026. Search by category — from simple chat assistants to complex enterprise AI — and find the perfect tool instantly.">
+<meta name="keywords" content="AI tools, AI search, best AI tools 2026, ChatGPT, Claude, Gemini, AI directory, artificial intelligence tools, AI for coding, AI for writing, AI agents">
+<meta name="robots" content="index, follow">
+<meta name="author" content="AI Search">
+<meta property="og:title" content="AI Search — Find the Right AI Tool for Anything">
+<meta property="og:description" content="150+ AI tools organized by category. Search, compare, and discover the best AI tools of 2026.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aisearch.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Search — Find the Right AI Tool for Anything">
+<meta name="twitter:description" content="150+ AI tools in one place. From simple chat to complex problem solving.">
+<link rel="canonical" href="https://aisearch.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
@@ -25,531 +37,165 @@
     --radius-lg: 18px;
     --radius-xl: 24px;
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  /* NOISE TEXTURE */
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; }
   body::before {
     content: '';
-    position: fixed;
-    inset: 0;
+    position: fixed; inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.6;
+    pointer-events: none; z-index: 0; opacity: 0.6;
   }
-
-  /* HERO GLOW */
-  .hero-glow {
-    position: fixed;
-    top: -200px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 800px;
-    height: 500px;
-    background: radial-gradient(ellipse, rgba(108,99,255,0.12) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-  }
+  .hero-glow { position: fixed; top: -200px; left: 50%; transform: translateX(-50%); width: 800px; height: 500px; background: radial-gradient(ellipse, rgba(108,99,255,0.12) 0%, transparent 70%); pointer-events: none; z-index: 0; }
 
   /* NAV */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(10,10,15,0.85);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,15,0.88); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); }
+  .nav-logo-icon { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, #6c63ff, #00d4aa); display: flex; align-items: center; justify-content: center; font-size: 15px; }
+  .nav-badge { font-size: 11px; padding: 3px 10px; border-radius: 99px; background: rgba(108,99,255,0.15); border: 1px solid rgba(108,99,255,0.3); color: #a09aff; font-weight: 500; }
 
-  .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.2rem;
-    letter-spacing: -0.02em;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: var(--text);
-  }
-
-  .nav-logo-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 12px var(--accent);
-    animation: pulse 2s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.6; transform: scale(0.8); }
-  }
-
-  .nav-badge {
-    font-size: 11px;
-    padding: 3px 10px;
-    border-radius: 99px;
-    background: rgba(108,99,255,0.15);
-    border: 1px solid rgba(108,99,255,0.3);
-    color: #a09aff;
-    font-weight: 500;
-  }
-
-  /* MAIN WRAPPER */
-  .wrapper {
-    position: relative;
-    z-index: 1;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
+  /* WRAPPER */
+  .wrapper { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
 
   /* HERO */
-  .hero {
-    text-align: center;
-    padding: 5rem 2rem 3.5rem;
-  }
-
-  .hero-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent2);
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    padding: 6px 16px;
-    background: var(--accent2-glow);
-    border: 1px solid rgba(0,212,170,0.2);
-    border-radius: 99px;
-  }
-
-  .hero h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
-    font-weight: 800;
-    line-height: 1.0;
-    letter-spacing: -0.04em;
-    margin-bottom: 1.25rem;
-  }
-
-  .hero h1 span {
-    background: linear-gradient(135deg, #6c63ff 0%, #a855f7 40%, #00d4aa 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .hero p {
-    font-size: 1.15rem;
-    color: var(--text-secondary);
-    max-width: 560px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.7;
-    font-weight: 300;
-  }
-
-  /* STATS ROW */
-  .stats-row {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
-  }
-
-  .stat-chip {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: var(--text-secondary);
-  }
-
-  .stat-chip strong {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text);
-  }
-
-  .stat-chip-dot {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--text-muted);
-  }
+  .hero { text-align: center; padding: 5rem 2rem 3.5rem; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); font-weight: 500; margin-bottom: 1.5rem; padding: 6px 16px; background: var(--accent2-glow); border: 1px solid rgba(0,212,170,0.2); border-radius: 99px; }
+  .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 800; line-height: 1.0; letter-spacing: -0.04em; margin-bottom: 1.25rem; }
+  .hero h1 span { background: linear-gradient(135deg, #6c63ff 0%, #a855f7 40%, #00d4aa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .hero p { font-size: 1.15rem; color: var(--text-secondary); max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.7; font-weight: 300; }
+  .stats-row { display: flex; justify-content: center; gap: 2rem; margin-bottom: 3rem; flex-wrap: wrap; }
+  .stat-chip { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-secondary); }
+  .stat-chip strong { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--text); }
+  .stat-chip-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); }
 
   /* SEARCH */
-  .search-container {
-    max-width: 680px;
-    margin: 0 auto 2rem;
-    position: relative;
-  }
-
-  .search-icon {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-muted);
-    pointer-events: none;
-    font-size: 18px;
-  }
-
-  #search {
-    width: 100%;
-    padding: 18px 56px 18px 54px;
-    font-size: 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-xl);
-    color: var(--text);
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    letter-spacing: -0.01em;
-  }
-
+  .search-container { max-width: 680px; margin: 0 auto 2rem; position: relative; }
+  .search-icon { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none; }
+  #search { width: 100%; padding: 18px 56px 18px 54px; font-size: 16px; font-family: 'DM Sans', sans-serif; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); color: var(--text); outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
   #search::placeholder { color: var(--text-muted); }
+  #search:focus { border-color: rgba(108,99,255,0.5); box-shadow: 0 0 0 3px var(--accent-glow); }
+  .search-kbd { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 11px; color: var(--text-muted); background: var(--surface2); border: 1px solid var(--border); padding: 3px 8px; border-radius: 6px; pointer-events: none; }
+  .search-results-count { text-align: center; font-size: 13px; color: var(--text-muted); margin-bottom: 2rem; min-height: 20px; }
 
-  #search:focus {
-    border-color: rgba(108,99,255,0.5);
-    box-shadow: 0 0 0 3px var(--accent-glow);
-  }
+  /* FILTERS */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; }
+  .filter-pill { font-family: 'DM Sans', sans-serif; font-size: 13px; padding: 8px 18px; border-radius: 99px; border: 1px solid var(--border); background: transparent; color: var(--text-secondary); cursor: pointer; transition: all 0.18s; display: flex; align-items: center; gap: 6px; }
+  .filter-pill:hover { border-color: var(--border-hover); color: var(--text); background: var(--surface); }
+  .filter-pill.active { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 0 20px var(--accent-glow); }
+  .filter-pill .pill-count { font-size: 11px; opacity: 0.7; background: rgba(255,255,255,0.15); padding: 1px 6px; border-radius: 99px; }
 
-  .search-kbd {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 11px;
-    color: var(--text-muted);
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    padding: 3px 8px;
-    border-radius: 6px;
-    pointer-events: none;
-  }
-
-  .search-results-count {
-    text-align: center;
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-    min-height: 20px;
-    transition: opacity 0.2s;
-  }
-
-  /* FILTER PILLS */
-  .filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    margin-bottom: 3rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .filter-pill {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    padding: 8px 18px;
-    border-radius: 99px;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: all 0.18s;
-    letter-spacing: -0.01em;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .filter-pill:hover {
-    border-color: var(--border-hover);
-    color: var(--text);
-    background: var(--surface);
-  }
-
-  .filter-pill.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #fff;
-    box-shadow: 0 0 20px var(--accent-glow);
-  }
-
-  .filter-pill .pill-count {
-    font-size: 11px;
-    opacity: 0.7;
-    background: rgba(255,255,255,0.15);
-    padding: 1px 6px;
-    border-radius: 99px;
-  }
-
-  /* CATEGORY SECTIONS */
-  .cat-section {
-    margin-bottom: 3.5rem;
-    animation: fadeUp 0.4s ease both;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .cat-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 1.25rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .cat-icon-wrap {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-
+  /* CAT SECTION */
+  .cat-section { margin-bottom: 3.5rem; animation: fadeUp 0.4s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .cat-header { display: flex; align-items: center; gap: 14px; margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+  .cat-icon-wrap { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
   .cat-meta { flex: 1; }
-
-  .cat-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--text);
-  }
-
-  .cat-sub {
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-top: 2px;
-  }
-
-  .cat-count-badge {
-    font-size: 12px;
-    color: var(--text-muted);
-    background: var(--surface2);
-    padding: 4px 12px;
-    border-radius: 99px;
-    border: 1px solid var(--border);
-    font-family: 'Syne', sans-serif;
-    font-weight: 600;
-    margin-left: auto;
-  }
+  .cat-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text); }
+  .cat-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .cat-count-badge { font-size: 12px; color: var(--text-muted); background: var(--surface2); padding: 4px 12px; border-radius: 99px; border: 1px solid var(--border); font-family: 'Syne', sans-serif; font-weight: 600; margin-left: auto; }
 
   /* TOOLS GRID */
-  .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 12px;
-  }
+  .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
 
   /* TOOL CARD */
+  .tool-card-wrapper { position: relative; }
   .tool-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 18px 20px;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    display: block;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+    padding: 18px 20px; cursor: pointer; text-decoration: none; color: inherit; display: block;
     transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s, background 0.2s;
-    position: relative;
-    overflow: hidden;
+    position: relative; overflow: hidden;
   }
-
-  .tool-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.3s;
-    background: radial-gradient(circle at 30% 0%, rgba(108,99,255,0.08) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  .tool-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--border-hover);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 1px rgba(108,99,255,0.1);
-    background: var(--surface2);
-  }
-
+  .tool-card::before { content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity 0.3s; background: radial-gradient(circle at 30% 0%, rgba(108,99,255,0.08) 0%, transparent 60%); pointer-events: none; }
+  .tool-card:hover { transform: translateY(-3px); border-color: var(--border-hover); box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 1px rgba(108,99,255,0.1); background: var(--surface2); }
   .tool-card:hover::before { opacity: 1; }
-
-  .tool-card-top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 8px;
-    margin-bottom: 10px;
-  }
-
-  .tool-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--text);
-    letter-spacing: -0.02em;
-    line-height: 1.3;
-  }
-
-  .tool-badges {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    flex-shrink: 0;
-  }
-
-  .badge {
-    font-size: 10px;
-    font-weight: 500;
-    padding: 2px 8px;
-    border-radius: 99px;
-    letter-spacing: 0.02em;
-  }
-
+  .tool-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+  .tool-name { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700; color: var(--text); letter-spacing: -0.02em; line-height: 1.3; }
+  .tool-badges { display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
+  .badge { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 99px; letter-spacing: 0.02em; }
   .badge-free { background: rgba(0,212,170,0.1); color: #00d4aa; border: 1px solid rgba(0,212,170,0.2); }
   .badge-freemium { background: rgba(108,99,255,0.1); color: #a09aff; border: 1px solid rgba(108,99,255,0.2); }
   .badge-paid { background: rgba(255,120,80,0.1); color: #ff8860; border: 1px solid rgba(255,120,80,0.2); }
-
-  .badge-tier {
-    font-family: 'Syne', sans-serif;
-    font-size: 10px;
-    font-weight: 800;
-    padding: 2px 7px;
-    border-radius: 5px;
-  }
-
+  .badge-tier { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 5px; }
   .tier-s { background: rgba(0,212,170,0.12); color: #00d4aa; border: 1px solid rgba(0,212,170,0.25); }
   .tier-a { background: rgba(108,99,255,0.12); color: #a09aff; border: 1px solid rgba(108,99,255,0.25); }
   .tier-b { background: rgba(136,136,170,0.1); color: #8888aa; border: 1px solid rgba(136,136,170,0.2); }
+  .tool-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.6; font-weight: 300; }
+  .tool-card-footer { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .tool-link-hint { font-size: 11px; color: var(--text-muted); display: flex; align-items: center; gap: 4px; transition: color 0.2s; }
+  .tool-card:hover .tool-link-hint { color: var(--accent); }
+  .tool-link-arrow { transition: transform 0.2s; font-size: 12px; }
+  .tool-card:hover .tool-link-arrow { transform: translate(2px, -2px); }
 
-  .tool-desc {
-    font-size: 12px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    font-weight: 300;
+  /* ABOUT BUTTON */
+  .about-btn {
+    position: absolute; top: 10px; right: 10px; z-index: 10;
+    width: 24px; height: 24px; border-radius: 50%;
+    background: rgba(108,99,255,0.15); border: 1px solid rgba(108,99,255,0.3);
+    color: #a09aff; font-size: 12px; font-weight: 700;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: all 0.18s; font-family: 'Syne', sans-serif;
+    line-height: 1;
   }
+  .about-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: scale(1.1); box-shadow: 0 0 12px var(--accent-glow); }
 
-  .tool-card-footer {
-    margin-top: 12px;
-    padding-top: 10px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  /* MODAL */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.75); backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 1.5rem; opacity: 0; pointer-events: none;
+    transition: opacity 0.25s;
   }
-
-  .tool-link-hint {
-    font-size: 11px;
-    color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    transition: color 0.2s;
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+  .modal {
+    background: var(--surface); border: 1px solid var(--border-hover);
+    border-radius: var(--radius-xl); width: 100%; max-width: 560px;
+    max-height: 85vh; overflow-y: auto;
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.25s;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(108,99,255,0.15);
   }
-
-  .tool-card:hover .tool-link-hint {
-    color: var(--accent);
+  .modal-overlay.open .modal { transform: translateY(0) scale(1); }
+  .modal-header {
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+    position: sticky; top: 0; background: var(--surface); z-index: 2;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   }
-
-  .tool-link-arrow {
-    transition: transform 0.2s;
-    font-size: 12px;
-  }
-
-  .tool-card:hover .tool-link-arrow {
-    transform: translate(2px, -2px);
-  }
-
-  .tool-cat-tag {
-    font-size: 10px;
-    color: var(--text-muted);
-  }
+  .modal-title-wrap {}
+  .modal-tool-name { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800; letter-spacing: -0.03em; color: var(--text); }
+  .modal-tool-cat { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+  .modal-close { width: 32px; height: 32px; border-radius: 8px; background: var(--surface2); border: 1px solid var(--border); color: var(--text-secondary); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.15s; line-height: 1; }
+  .modal-close:hover { background: var(--surface3); color: var(--text); }
+  .modal-body { padding: 1.5rem; }
+  .modal-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.25rem; }
+  .modal-section { margin-bottom: 1.25rem; }
+  .modal-section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 600; margin-bottom: 6px; }
+  .modal-section-text { font-size: 14px; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
+  .modal-loading { text-align: center; padding: 2rem; }
+  .modal-spinner { width: 28px; height: 28px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.7s linear infinite; margin: 0 auto 1rem; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .modal-loading-text { font-size: 13px; color: var(--text-muted); }
+  .modal-visit-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 13px; border-radius: var(--radius); background: var(--accent); border: none; color: #fff; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; cursor: pointer; text-decoration: none; transition: opacity 0.2s, box-shadow 0.2s; margin-top: 1.5rem; letter-spacing: -0.01em; }
+  .modal-visit-btn:hover { opacity: 0.9; box-shadow: 0 0 24px var(--accent-glow); }
+  .modal-ai-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; color: var(--text-muted); margin-top: 1rem; justify-content: center; width: 100%; }
+  .modal-ai-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent2); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
 
   /* NO RESULTS */
-  .no-results {
-    text-align: center;
-    padding: 5rem 2rem;
-    color: var(--text-muted);
-  }
-
-  .no-results-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    opacity: 0.3;
-  }
-
-  .no-results h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-  }
+  .no-results { text-align: center; padding: 5rem 2rem; color: var(--text-muted); }
+  .no-results-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.3; }
+  .no-results h3 { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 0.5rem; }
 
   /* FOOTER */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 2.5rem 2rem;
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 13px;
-    margin-top: 4rem;
-    position: relative;
-    z-index: 1;
-  }
-
+  footer { border-top: 1px solid var(--border); padding: 2.5rem 2rem; text-align: center; color: var(--text-muted); font-size: 13px; margin-top: 4rem; position: relative; z-index: 1; }
   footer span { color: var(--text-secondary); }
 
-  /* HIGHLIGHT */
-  mark {
-    background: rgba(108,99,255,0.3);
-    color: var(--text);
-    border-radius: 3px;
-    padding: 0 2px;
-  }
-
-  /* SCROLLBAR */
+  mark { background: rgba(108,99,255,0.3); color: var(--text); border-radius: 3px; padding: 0 2px; }
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--surface3); border-radius: 3px; }
 
-  /* RESPONSIVE */
   @media (max-width: 768px) {
     .hero { padding: 3rem 1rem 2rem; }
     .wrapper { padding: 0 1rem; }
@@ -564,42 +210,55 @@
 
 <div class="hero-glow"></div>
 
+<!-- ABOUT MODAL -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="modal-title-wrap">
+        <div class="modal-tool-name" id="modal-name">Tool Name</div>
+        <div class="modal-tool-cat" id="modal-cat">Category</div>
+      </div>
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body">
+      <div class="modal-loading">
+        <div class="modal-spinner"></div>
+        <div class="modal-loading-text">Fetching details with AI…</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <nav>
   <a class="nav-logo" href="#">
-    <span class="nav-logo-dot"></span>
-    AIverse
+    <div class="nav-logo-icon">🔍</div>
+    AI Search
   </a>
   <span class="nav-badge">May 2026 · 150+ tools</span>
 </nav>
 
 <div class="wrapper">
   <section class="hero">
-    <div class="hero-eyebrow">
-      <span>●</span> Live Directory — Updated May 2026
-    </div>
+    <div class="hero-eyebrow"><span>●</span> Live Directory — Updated May 2026</div>
     <h1>Find the right<br><span>AI tool</span><br>for anything</h1>
-    <p>150+ AI tools, organized from simple chat assistants to enterprise-grade problem solvers. Click any tool to visit its website.</p>
-
+    <p>150+ AI tools organized from simple chat assistants to enterprise-grade problem solvers. Click any tool to visit its website, or tap ⓘ to learn about it.</p>
     <div class="stats-row">
-      <div class="stat-chip"><strong id="total-count">150+</strong> tools indexed</div>
+      <div class="stat-chip"><strong>150+</strong> tools indexed</div>
       <div class="stat-chip-dot"></div>
       <div class="stat-chip"><strong>12</strong> categories</div>
       <div class="stat-chip-dot"></div>
       <div class="stat-chip"><strong>60+</strong> free or freemium</div>
     </div>
-
     <div class="search-container">
       <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       <input id="search" type="text" placeholder="Search tools, use cases, or categories…" autocomplete="off">
       <span class="search-kbd">⌘K</span>
     </div>
-
     <div id="results-count" class="search-results-count"></div>
   </section>
 
   <div class="filters" id="filters"></div>
   <div id="grid"></div>
-
   <div id="no-results" class="no-results" style="display:none">
     <div class="no-results-icon">⌀</div>
     <h3>No tools found</h3>
@@ -608,196 +267,251 @@
 </div>
 
 <footer>
-  Built with ♥ · <span>AIverse Directory 2026</span> · Prices and features verified May 2026 · Click any tool to visit its official website
+  Built with ♥ · <span>AI Search — The AI Tools Directory 2026</span> · Click any card to visit · Tap ⓘ for AI-powered details
 </footer>
 
 <script>
 const CATS = [
-  {
-    id:'chat', emoji:'💬', bg:'#0d2010', iconBg:'#1a3a20',
-    title:'Conversational chat AI', sub:'General-purpose assistants for everyday questions',
-    tools:[
-      {name:'ChatGPT',url:'https://chatgpt.com',price:'freemium',tier:'S',desc:'Most versatile all-purpose assistant. GPT-5.5 with web, image, code, voice.'},
-      {name:'Claude',url:'https://claude.ai',price:'freemium',tier:'S',desc:'Anthropic\'s flagship. Best for long-form writing, analysis, and coding judgment.'},
-      {name:'Gemini',url:'https://gemini.google.com',price:'freemium',tier:'S',desc:'Google\'s multimodal AI with deep Search and Workspace integration.'},
-      {name:'Grok',url:'https://grok.com',price:'freemium',tier:'A',desc:'xAI\'s model with real-time X/Twitter data and strong reasoning.'},
-      {name:'Le Chat (Mistral)',url:'https://chat.mistral.ai',price:'free',tier:'A',desc:'Mistral\'s chat app with Gmail/Calendar agent hooks and 675B parameters.'},
-      {name:'Meta AI',url:'https://ai.meta.com',price:'free',tier:'A',desc:'Llama-powered assistant built into WhatsApp, Instagram, Messenger.'},
-      {name:'Microsoft Copilot',url:'https://copilot.microsoft.com',price:'freemium',tier:'A',desc:'GPT-5 wrapped in Microsoft 365 with Office, Teams, and Edge access.'},
-      {name:'Pi (Inflection)',url:'https://pi.ai',price:'free',tier:'B',desc:'Empathetic conversational AI focused on personal coaching and journaling.'},
-      {name:'HuggingChat',url:'https://huggingface.co/chat',price:'free',tier:'B',desc:'Open-source chat running Llama, Mistral, and other open models.'},
-    ]
-  },
-  {
-    id:'search', emoji:'🔍', bg:'#0d1020', iconBg:'#1a2040',
-    title:'AI-powered search & research', sub:'Real-time web search with cited answers',
-    tools:[
-      {name:'Perplexity AI',url:'https://perplexity.ai',price:'freemium',tier:'S',desc:'Best AI answer engine. Cites sources, real-time web, Deep Research mode.'},
-      {name:'Google AI Overviews',url:'https://google.com',price:'free',tier:'A',desc:'AI summaries built directly into Google Search results.'},
-      {name:'Bing Copilot',url:'https://bing.com',price:'free',tier:'A',desc:'Microsoft\'s AI-powered Bing search with GPT-5 model backing.'},
-      {name:'You.com',url:'https://you.com',price:'freemium',tier:'A',desc:'AI search with apps, coding, writing, and research modes in one place.'},
-      {name:'Exa AI',url:'https://exa.ai',price:'freemium',tier:'B',desc:'Neural search API for semantic web retrieval, popular with developers.'},
-      {name:'Tavily',url:'https://tavily.com',price:'freemium',tier:'B',desc:'Search API purpose-built for LLM agents and RAG pipelines.'},
-      {name:'NotebookLM',url:'https://notebooklm.google.com',price:'free',tier:'A',desc:'Google\'s document-grounded AI. Chat with your PDFs, notes, and sources.'},
-    ]
-  },
-  {
-    id:'writing', emoji:'✍️', bg:'#1a100a', iconBg:'#2a1c10',
-    title:'Writing & content creation', sub:'Drafting, editing, SEO, and long-form content',
-    tools:[
-      {name:'Grammarly',url:'https://grammarly.com',price:'freemium',tier:'S',desc:'Grammar, tone, clarity editing with deep integration across the web.'},
-      {name:'Jasper AI',url:'https://jasper.ai',price:'paid',tier:'A',desc:'Enterprise content platform with brand voice, team workflows, and templates.'},
-      {name:'Copy.ai',url:'https://copy.ai',price:'freemium',tier:'A',desc:'Marketing copy for ads, emails, landing pages, and social content.'},
-      {name:'Writesonic',url:'https://writesonic.com',price:'freemium',tier:'A',desc:'Long-form article writer with Surfer SEO and SERP integration.'},
-      {name:'Surfer AI',url:'https://surferseo.com',price:'paid',tier:'A',desc:'SEO-optimized article writer with live SERP scoring and NLP terms.'},
-      {name:'Rytr',url:'https://rytr.me',price:'freemium',tier:'B',desc:'Budget-friendly writer for short-form content with 40+ use cases.'},
-      {name:'Anyword',url:'https://anyword.com',price:'paid',tier:'B',desc:'AI writing with performance prediction scores for marketers.'},
-      {name:'Quillbot',url:'https://quillbot.com',price:'freemium',tier:'B',desc:'Paraphrasing, summarizing, and grammar check. Popular with students.'},
-      {name:'Wordtune',url:'https://wordtune.com',price:'freemium',tier:'B',desc:'Rewrite sentences for clarity, tone, and appropriate length.'},
-    ]
-  },
-  {
-    id:'image', emoji:'🎨', bg:'#150a18', iconBg:'#261030',
-    title:'Image & design generation', sub:'Text-to-image, design tools, and visual editing',
-    tools:[
-      {name:'Midjourney',url:'https://midjourney.com',price:'paid',tier:'S',desc:'Best aesthetic image quality. v7 model as of 2026. Discord and web app.'},
-      {name:'DALL-E (OpenAI)',url:'https://openai.com/dall-e',price:'freemium',tier:'A',desc:'OpenAI\'s image model integrated in ChatGPT. Very prompt-faithful output.'},
-      {name:'Stable Diffusion',url:'https://stability.ai',price:'free',tier:'A',desc:'Open-source image model. Run locally via ComfyUI or Automatic1111.'},
-      {name:'Adobe Firefly',url:'https://firefly.adobe.com',price:'freemium',tier:'A',desc:'Commercially safe Adobe AI with deep Photoshop/Illustrator integration.'},
-      {name:'Canva AI',url:'https://canva.com',price:'freemium',tier:'A',desc:'Design suite with Magic Studio, image gen, text effects, and video.'},
-      {name:'Ideogram',url:'https://ideogram.ai',price:'freemium',tier:'A',desc:'Excellent text rendering in images — logos, posters, and typography.'},
-      {name:'Leonardo AI',url:'https://leonardo.ai',price:'freemium',tier:'B',desc:'Game assets, consistent characters, and fine-tuned style training.'},
-      {name:'Runway ML',url:'https://runwayml.com',price:'freemium',tier:'A',desc:'Image and video AI. Gen-3 model for motion, inpainting, style transfer.'},
-      {name:'Krea AI',url:'https://krea.ai',price:'freemium',tier:'B',desc:'Real-time image gen, upscaling, and live canvas AI painting tools.'},
-      {name:'Recraft',url:'https://recraft.ai',price:'freemium',tier:'B',desc:'Vector generation, brand icon creation, and consistent style sets.'},
-    ]
-  },
-  {
-    id:'video', emoji:'🎬', bg:'#120a1a', iconBg:'#220f30',
-    title:'Video generation & editing', sub:'AI video creation, avatars, and editing tools',
-    tools:[
-      {name:'Runway Gen-3',url:'https://runwayml.com',price:'freemium',tier:'S',desc:'Top video generation model. Text-to-video, image-to-video, and editing.'},
-      {name:'HeyGen',url:'https://heygen.com',price:'freemium',tier:'S',desc:'AI avatars, video translation, and voice cloning. Category leader 2026.'},
-      {name:'Synthesia',url:'https://synthesia.io',price:'paid',tier:'A',desc:'Enterprise AI avatar video platform. 230+ avatars, 140+ languages.'},
-      {name:'Kling AI',url:'https://klingai.com',price:'freemium',tier:'A',desc:'High-quality text and image-to-video model from Kuaishou.'},
-      {name:'Pika Labs',url:'https://pika.art',price:'freemium',tier:'A',desc:'Creative video effects, motion, lip sync, and style transfer.'},
-      {name:'Luma Dream Machine',url:'https://lumalabs.ai',price:'freemium',tier:'A',desc:'Photorealistic video gen with strong physics and camera motion.'},
-      {name:'CapCut AI',url:'https://capcut.com',price:'free',tier:'A',desc:'Mobile-first video editor with AI captions, effects, and templates.'},
-      {name:'Descript',url:'https://descript.com',price:'freemium',tier:'A',desc:'Edit video by editing the transcript. Overdub and filler word removal.'},
-      {name:'Invideo AI',url:'https://invideo.io',price:'freemium',tier:'B',desc:'Text-to-video for YouTube and social with voiceovers and B-roll.'},
-    ]
-  },
-  {
-    id:'audio', emoji:'🎵', bg:'#0a140a', iconBg:'#102010',
-    title:'Audio, voice & music AI', sub:'TTS, voice cloning, transcription, and music gen',
-    tools:[
-      {name:'ElevenLabs',url:'https://elevenlabs.io',price:'freemium',tier:'S',desc:'Best voice cloning and TTS. 3,000+ voices across 32 languages.'},
-      {name:'Whisper (OpenAI)',url:'https://openai.com/research/whisper',price:'free',tier:'S',desc:'Open-source ASR model with best-in-class transcription accuracy.'},
-      {name:'Otter.ai',url:'https://otter.ai',price:'freemium',tier:'A',desc:'Meeting transcription, AI notes, Zoom/Teams/Meet integration.'},
-      {name:'Suno',url:'https://suno.com',price:'freemium',tier:'S',desc:'Text-to-music generation. Full songs with vocals in seconds.'},
-      {name:'Udio',url:'https://udio.com',price:'freemium',tier:'A',desc:'Music generation with precise genre, mood, and instrument control.'},
-      {name:'Murf AI',url:'https://murf.ai',price:'freemium',tier:'A',desc:'Studio-quality TTS voiceover for videos and presentations.'},
-      {name:'Adobe Podcast AI',url:'https://podcast.adobe.com',price:'free',tier:'A',desc:'Mic-quality audio enhancement and noise removal in the browser.'},
-      {name:'Krisp',url:'https://krisp.ai',price:'freemium',tier:'B',desc:'Real-time noise cancellation and AI meeting assistant.'},
-    ]
-  },
-  {
-    id:'coding', emoji:'💻', bg:'#120a0a', iconBg:'#221010',
-    title:'Coding & development AI', sub:'Code assistants, IDE agents, and app builders',
-    tools:[
-      {name:'Claude Code',url:'https://claude.ai/code',price:'freemium',tier:'S',desc:'Top-ranked terminal agent. 80.8% SWE-bench. Full repo autonomy via CLI.'},
-      {name:'Cursor',url:'https://cursor.sh',price:'freemium',tier:'S',desc:'AI-first IDE built on VS Code. Parallel agent fleet in Cursor 3.'},
-      {name:'GitHub Copilot',url:'https://github.com/features/copilot',price:'paid',tier:'S',desc:'Inline autocomplete and agent mode with deep GitHub/PR integration.'},
-      {name:'OpenAI Codex',url:'https://openai.com/codex',price:'freemium',tier:'A',desc:'Cloud-native agentic coding. Runs sandboxed, writes code, pushes to GitHub.'},
-      {name:'Google Jules',url:'https://jules.google.com',price:'freemium',tier:'A',desc:'Google\'s async coding agent. Now out of beta, powered by Gemini.'},
-      {name:'Windsurf',url:'https://codeium.com/windsurf',price:'freemium',tier:'A',desc:'AI IDE with Cascade agent. Strong for full-stack workflows.'},
-      {name:'Cline',url:'https://github.com/cline/cline',price:'free',tier:'A',desc:'Open-source VS Code agent. BYO API key, highly configurable.'},
-      {name:'Continue.dev',url:'https://continue.dev',price:'free',tier:'A',desc:'Open-source coding assistant working with any LLM via MCP.'},
-      {name:'Bolt.new',url:'https://bolt.new',price:'freemium',tier:'A',desc:'Browser-based full-stack app builder. Deploy in one click.'},
-      {name:'Lovable',url:'https://lovable.dev',price:'freemium',tier:'A',desc:'Prompt-to-app builder. Frontend + Supabase backend, no code required.'},
-      {name:'v0 by Vercel',url:'https://v0.dev',price:'freemium',tier:'A',desc:'Prompt to React/Next.js UI components. Deploys directly to Vercel.'},
-      {name:'Replit AI',url:'https://replit.com',price:'freemium',tier:'B',desc:'Cloud IDE with AI. Build, run, and host apps directly in browser.'},
-    ]
-  },
-  {
-    id:'productivity', emoji:'⚡', bg:'#0a140f', iconBg:'#102018',
-    title:'Productivity & automation', sub:'AI for workflows, docs, notes, and task management',
-    tools:[
-      {name:'Notion AI',url:'https://notion.so',price:'freemium',tier:'S',desc:'AI inside Notion workspace. Summarize, write, and Q&A your docs.'},
-      {name:'Zapier AI',url:'https://zapier.com',price:'freemium',tier:'S',desc:'No-code automation with AI actions. Connects 6,000+ apps.'},
-      {name:'Microsoft 365 Copilot',url:'https://microsoft.com/copilot',price:'paid',tier:'S',desc:'AI across Word, Excel, PowerPoint, Outlook, and Teams.'},
-      {name:'Make',url:'https://make.com',price:'freemium',tier:'A',desc:'Visual workflow automation with AI modules and agent nodes.'},
-      {name:'N8n',url:'https://n8n.io',price:'freemium',tier:'A',desc:'Open-source automation with AI nodes. Self-host or cloud deploy.'},
-      {name:'ClickUp AI',url:'https://clickup.com',price:'freemium',tier:'A',desc:'AI in project management. Write tasks, summarize threads, auto-plan.'},
-      {name:'Glean',url:'https://glean.com',price:'paid',tier:'A',desc:'Enterprise AI search across all internal tools — Slack, Drive, Jira.'},
-      {name:'Taskade AI',url:'https://taskade.com',price:'freemium',tier:'B',desc:'AI project management with agent workflows and mindmaps.'},
-      {name:'Claude Cowork',url:'https://claude.ai/download',price:'freemium',tier:'S',desc:'Anthropic\'s desktop AI agent. Reads files, runs scheduled tasks, and ships work autonomously. GA April 2026. Included in all paid Claude plans.'},
-    ]
-  },
-  {
-    id:'marketing', emoji:'📣', bg:'#140e0a', iconBg:'#241a10',
-    title:'Marketing, SEO & sales AI', sub:'Ad copy, lead gen, SEO tools, and CRM AI',
-    tools:[
-      {name:'Salesforce Einstein',url:'https://salesforce.com/artificial-intelligence',price:'paid',tier:'S',desc:'AI-powered CRM. Lead scoring, forecasting, and email generation.'},
-      {name:'HubSpot AI',url:'https://hubspot.com',price:'freemium',tier:'S',desc:'AI across CRM, email, blogging, social, and content strategy.'},
-      {name:'Semrush AI',url:'https://semrush.com',price:'paid',tier:'A',desc:'SEO platform with AI content brief, keyword research, SERP analysis.'},
-      {name:'Surfer SEO',url:'https://surferseo.com',price:'paid',tier:'A',desc:'Live SEO scoring and NLP optimization integrated while you write.'},
-      {name:'AdCreative.ai',url:'https://adcreative.ai',price:'paid',tier:'A',desc:'AI-generated ad creatives with performance scoring built-in.'},
-      {name:'Apollo AI',url:'https://apollo.io',price:'freemium',tier:'A',desc:'Lead gen and AI-drafted outreach with 275M contact database.'},
-      {name:'Lavender',url:'https://lavender.ai',price:'freemium',tier:'B',desc:'AI email coach. Scores cold emails for reply-rate improvement.'},
-    ]
-  },
-  {
-    id:'research', emoji:'🔬', bg:'#0d0a18', iconBg:'#1a1030',
-    title:'Research, data & analysis AI', sub:'Deep research, data analysis, RAG pipelines',
-    tools:[
-      {name:'Perplexity Deep Research',url:'https://perplexity.ai',price:'freemium',tier:'S',desc:'Multi-step autonomous web research with full sourced reports.'},
-      {name:'ChatGPT Deep Research',url:'https://chatgpt.com',price:'paid',tier:'S',desc:'OpenAI\'s multi-hour research agent. Synthesizes 100s of sources.'},
-      {name:'Elicit',url:'https://elicit.com',price:'freemium',tier:'A',desc:'AI research assistant for academic papers and literature review.'},
-      {name:'Consensus AI',url:'https://consensus.app',price:'freemium',tier:'A',desc:'Search 200M scientific papers and extract AI consensus findings.'},
-      {name:'LlamaIndex',url:'https://llamaindex.ai',price:'free',tier:'A',desc:'RAG framework for building knowledge retrieval pipelines.'},
-      {name:'LangChain',url:'https://langchain.com',price:'free',tier:'A',desc:'Framework for building LLM applications and agentic workflows.'},
-      {name:'Weaviate',url:'https://weaviate.io',price:'freemium',tier:'B',desc:'Open-source vector database for AI-powered search and RAG.'},
-      {name:'Pinecone',url:'https://pinecone.io',price:'freemium',tier:'B',desc:'Managed vector database with fast similarity search at scale.'},
-      {name:'Cohere',url:'https://cohere.com',price:'freemium',tier:'A',desc:'Enterprise LLMs for RAG and tool use. 100+ language support.'},
-    ]
-  },
-  {
-    id:'agents', emoji:'🤖', bg:'#140a0a', iconBg:'#240f0f',
-    title:'Autonomous AI agents', sub:'Multi-step task execution and orchestration',
-    tools:[
-      {name:'ChatGPT Operator',url:'https://chatgpt.com',price:'paid',tier:'S',desc:'OpenAI\'s computer-use agent. Books, browses, fills forms autonomously.'},
-      {name:'Manus AI',url:'https://manus.im',price:'freemium',tier:'S',desc:'Action engine. Creates slides, builds sites, automates multi-step tasks.'},
-      {name:'Claude Computer Use',url:'https://claude.ai',price:'paid',tier:'A',desc:'Anthropic\'s computer-use API. Controls browser and desktop autonomously.'},
-      {name:'Google Project Mariner',url:'https://deepmind.google',price:'freemium',tier:'A',desc:'Chrome browser automation agent from Google DeepMind.'},
-      {name:'Microsoft Agent 365',url:'https://microsoft.com',price:'paid',tier:'A',desc:'Enterprise agent control plane inside M365, launched May 2026.'},
-      {name:'CrewAI',url:'https://crewai.com',price:'freemium',tier:'A',desc:'Multi-agent orchestration framework with role-based agent crews.'},
-      {name:'AutoGPT',url:'https://autogpt.net',price:'free',tier:'B',desc:'Open-source agent framework for goal-based task planning and execution.'},
-      {name:'Vertex AI Agents',url:'https://cloud.google.com/vertex-ai',price:'paid',tier:'A',desc:'Google Cloud managed agent platform with grounding and tool calling.'},
-      {name:'AWS Bedrock Agents',url:'https://aws.amazon.com/bedrock',price:'paid',tier:'A',desc:'Amazon\'s managed agents with knowledge bases and tool calling.'},
-    ]
-  },
-  {
-    id:'enterprise', emoji:'🏢', bg:'#0a0f18', iconBg:'#101828',
-    title:'Enterprise & ML infrastructure', sub:'Industry-specific AI and ML platforms',
-    tools:[
-      {name:'Azure AI Foundry',url:'https://azure.microsoft.com/ai',price:'paid',tier:'S',desc:'Microsoft\'s enterprise AI platform. Deploy, fine-tune, and govern models.'},
-      {name:'Google Vertex AI',url:'https://cloud.google.com/vertex-ai',price:'paid',tier:'S',desc:'GCP\'s unified ML and AI platform. Gemini API, agents, and pipelines.'},
-      {name:'AWS SageMaker',url:'https://aws.amazon.com/sagemaker',price:'paid',tier:'S',desc:'Amazon\'s end-to-end ML platform. Train, deploy, and monitor at scale.'},
-      {name:'Hugging Face',url:'https://huggingface.co',price:'freemium',tier:'S',desc:'Model hub with 900K+ models. Inference API, Spaces, and fine-tuning.'},
-      {name:'Databricks Mosaic AI',url:'https://databricks.com',price:'paid',tier:'A',desc:'Enterprise data and AI platform with model serving and vector search.'},
-      {name:'Harvey AI',url:'https://harvey.ai',price:'paid',tier:'A',desc:'AI for law firms. Contract review, legal research, and case work.'},
-      {name:'Scale AI',url:'https://scale.com',price:'paid',tier:'A',desc:'Data labeling, RLHF, and AI evaluation platform.'},
-      {name:'Weights & Biases',url:'https://wandb.ai',price:'freemium',tier:'A',desc:'MLOps platform. Experiment tracking, model registry, and evals.'},
-      {name:'Replicate',url:'https://replicate.com',price:'freemium',tier:'A',desc:'Run open-source AI models via API on fast GPU serverless infrastructure.'},
-    ]
-  },
+  { id:'chat', emoji:'💬', iconBg:'#1a3a20', title:'Conversational chat AI', sub:'General-purpose assistants for everyday questions', tools:[
+    {name:'ChatGPT',url:'https://chatgpt.com',price:'freemium',tier:'S',desc:'Most versatile all-purpose assistant. GPT-5.5 with web, image, code, voice.'},
+    {name:'Claude',url:'https://claude.ai',price:'freemium',tier:'S',desc:'Anthropic\'s flagship. Best for long-form writing, analysis, and coding judgment.'},
+    {name:'Gemini',url:'https://gemini.google.com',price:'freemium',tier:'S',desc:'Google\'s multimodal AI with deep Search and Workspace integration.'},
+    {name:'Grok',url:'https://grok.com',price:'freemium',tier:'A',desc:'xAI\'s model with real-time X/Twitter data and strong reasoning.'},
+    {name:'Le Chat (Mistral)',url:'https://chat.mistral.ai',price:'free',tier:'A',desc:'Mistral\'s chat app with Gmail/Calendar agent hooks and 675B parameters.'},
+    {name:'Meta AI',url:'https://ai.meta.com',price:'free',tier:'A',desc:'Llama-powered assistant built into WhatsApp, Instagram, Messenger.'},
+    {name:'Microsoft Copilot',url:'https://copilot.microsoft.com',price:'freemium',tier:'A',desc:'GPT-5 wrapped in Microsoft 365 with Office, Teams, and Edge access.'},
+    {name:'Pi (Inflection)',url:'https://pi.ai',price:'free',tier:'B',desc:'Empathetic conversational AI focused on personal coaching and journaling.'},
+    {name:'HuggingChat',url:'https://huggingface.co/chat',price:'free',tier:'B',desc:'Open-source chat running Llama, Mistral, and other open models.'},
+  ]},
+  { id:'search', emoji:'🔍', iconBg:'#1a2040', title:'AI-powered search & research', sub:'Real-time web search with cited answers', tools:[
+    {name:'Perplexity AI',url:'https://perplexity.ai',price:'freemium',tier:'S',desc:'Best AI answer engine. Cites sources, real-time web, Deep Research mode.'},
+    {name:'Google AI Overviews',url:'https://google.com',price:'free',tier:'A',desc:'AI summaries built directly into Google Search results.'},
+    {name:'Bing Copilot',url:'https://bing.com',price:'free',tier:'A',desc:'Microsoft\'s AI-powered Bing search with GPT-5 model backing.'},
+    {name:'You.com',url:'https://you.com',price:'freemium',tier:'A',desc:'AI search with apps, coding, writing, and research modes in one place.'},
+    {name:'Exa AI',url:'https://exa.ai',price:'freemium',tier:'B',desc:'Neural search API for semantic web retrieval, popular with developers.'},
+    {name:'Tavily',url:'https://tavily.com',price:'freemium',tier:'B',desc:'Search API purpose-built for LLM agents and RAG pipelines.'},
+    {name:'NotebookLM',url:'https://notebooklm.google.com',price:'free',tier:'A',desc:'Google\'s document-grounded AI. Chat with your PDFs, notes, and sources.'},
+  ]},
+  { id:'writing', emoji:'✍️', iconBg:'#2a1c10', title:'Writing & content creation', sub:'Drafting, editing, SEO, and long-form content', tools:[
+    {name:'Grammarly',url:'https://grammarly.com',price:'freemium',tier:'S',desc:'Grammar, tone, clarity editing with deep integration across the web.'},
+    {name:'Jasper AI',url:'https://jasper.ai',price:'paid',tier:'A',desc:'Enterprise content platform with brand voice, team workflows, and templates.'},
+    {name:'Copy.ai',url:'https://copy.ai',price:'freemium',tier:'A',desc:'Marketing copy for ads, emails, landing pages, and social content.'},
+    {name:'Writesonic',url:'https://writesonic.com',price:'freemium',tier:'A',desc:'Long-form article writer with Surfer SEO and SERP integration.'},
+    {name:'Surfer AI',url:'https://surferseo.com',price:'paid',tier:'A',desc:'SEO-optimized article writer with live SERP scoring and NLP terms.'},
+    {name:'Rytr',url:'https://rytr.me',price:'freemium',tier:'B',desc:'Budget-friendly writer for short-form content with 40+ use cases.'},
+    {name:'Anyword',url:'https://anyword.com',price:'paid',tier:'B',desc:'AI writing with performance prediction scores for marketers.'},
+    {name:'Quillbot',url:'https://quillbot.com',price:'freemium',tier:'B',desc:'Paraphrasing, summarizing, and grammar check. Popular with students.'},
+    {name:'Wordtune',url:'https://wordtune.com',price:'freemium',tier:'B',desc:'Rewrite sentences for clarity, tone, and appropriate length.'},
+  ]},
+  { id:'image', emoji:'🎨', iconBg:'#261030', title:'Image & design generation', sub:'Text-to-image, design tools, and visual editing', tools:[
+    {name:'Midjourney',url:'https://midjourney.com',price:'paid',tier:'S',desc:'Best aesthetic image quality. v7 model as of 2026. Discord and web app.'},
+    {name:'DALL-E (OpenAI)',url:'https://openai.com/dall-e',price:'freemium',tier:'A',desc:'OpenAI\'s image model integrated in ChatGPT. Very prompt-faithful output.'},
+    {name:'Stable Diffusion',url:'https://stability.ai',price:'free',tier:'A',desc:'Open-source image model. Run locally via ComfyUI or Automatic1111.'},
+    {name:'Adobe Firefly',url:'https://firefly.adobe.com',price:'freemium',tier:'A',desc:'Commercially safe Adobe AI with deep Photoshop/Illustrator integration.'},
+    {name:'Canva AI',url:'https://canva.com',price:'freemium',tier:'A',desc:'Design suite with Magic Studio, image gen, text effects, and video.'},
+    {name:'Ideogram',url:'https://ideogram.ai',price:'freemium',tier:'A',desc:'Excellent text rendering in images — logos, posters, and typography.'},
+    {name:'Leonardo AI',url:'https://leonardo.ai',price:'freemium',tier:'B',desc:'Game assets, consistent characters, and fine-tuned style training.'},
+    {name:'Runway ML',url:'https://runwayml.com',price:'freemium',tier:'A',desc:'Image and video AI. Gen-3 model for motion, inpainting, style transfer.'},
+    {name:'Krea AI',url:'https://krea.ai',price:'freemium',tier:'B',desc:'Real-time image gen, upscaling, and live canvas AI painting tools.'},
+    {name:'Recraft',url:'https://recraft.ai',price:'freemium',tier:'B',desc:'Vector generation, brand icon creation, and consistent style sets.'},
+  ]},
+  { id:'video', emoji:'🎬', iconBg:'#220f30', title:'Video generation & editing', sub:'AI video creation, avatars, and editing tools', tools:[
+    {name:'Runway Gen-3',url:'https://runwayml.com',price:'freemium',tier:'S',desc:'Top video generation model. Text-to-video, image-to-video, and editing.'},
+    {name:'HeyGen',url:'https://heygen.com',price:'freemium',tier:'S',desc:'AI avatars, video translation, and voice cloning. Category leader 2026.'},
+    {name:'Synthesia',url:'https://synthesia.io',price:'paid',tier:'A',desc:'Enterprise AI avatar video platform. 230+ avatars, 140+ languages.'},
+    {name:'Kling AI',url:'https://klingai.com',price:'freemium',tier:'A',desc:'High-quality text and image-to-video model from Kuaishou.'},
+    {name:'Pika Labs',url:'https://pika.art',price:'freemium',tier:'A',desc:'Creative video effects, motion, lip sync, and style transfer.'},
+    {name:'Luma Dream Machine',url:'https://lumalabs.ai',price:'freemium',tier:'A',desc:'Photorealistic video gen with strong physics and camera motion.'},
+    {name:'CapCut AI',url:'https://capcut.com',price:'free',tier:'A',desc:'Mobile-first video editor with AI captions, effects, and templates.'},
+    {name:'Descript',url:'https://descript.com',price:'freemium',tier:'A',desc:'Edit video by editing the transcript. Overdub and filler word removal.'},
+    {name:'Invideo AI',url:'https://invideo.io',price:'freemium',tier:'B',desc:'Text-to-video for YouTube and social with voiceovers and B-roll.'},
+  ]},
+  { id:'audio', emoji:'🎵', iconBg:'#102010', title:'Audio, voice & music AI', sub:'TTS, voice cloning, transcription, and music gen', tools:[
+    {name:'ElevenLabs',url:'https://elevenlabs.io',price:'freemium',tier:'S',desc:'Best voice cloning and TTS. 3,000+ voices across 32 languages.'},
+    {name:'Whisper (OpenAI)',url:'https://openai.com/research/whisper',price:'free',tier:'S',desc:'Open-source ASR model with best-in-class transcription accuracy.'},
+    {name:'Otter.ai',url:'https://otter.ai',price:'freemium',tier:'A',desc:'Meeting transcription, AI notes, Zoom/Teams/Meet integration.'},
+    {name:'Suno',url:'https://suno.com',price:'freemium',tier:'S',desc:'Text-to-music generation. Full songs with vocals in seconds.'},
+    {name:'Udio',url:'https://udio.com',price:'freemium',tier:'A',desc:'Music generation with precise genre, mood, and instrument control.'},
+    {name:'Murf AI',url:'https://murf.ai',price:'freemium',tier:'A',desc:'Studio-quality TTS voiceover for videos and presentations.'},
+    {name:'Adobe Podcast AI',url:'https://podcast.adobe.com',price:'free',tier:'A',desc:'Mic-quality audio enhancement and noise removal in the browser.'},
+    {name:'Krisp',url:'https://krisp.ai',price:'freemium',tier:'B',desc:'Real-time noise cancellation and AI meeting assistant.'},
+  ]},
+  { id:'coding', emoji:'💻', iconBg:'#221010', title:'Coding & development AI', sub:'Code assistants, IDE agents, and app builders', tools:[
+    {name:'Claude Code',url:'https://claude.ai/code',price:'freemium',tier:'S',desc:'Top-ranked terminal agent. 80.8% SWE-bench. Full repo autonomy via CLI.'},
+    {name:'Cursor',url:'https://cursor.sh',price:'freemium',tier:'S',desc:'AI-first IDE built on VS Code. Parallel agent fleet in Cursor 3.'},
+    {name:'GitHub Copilot',url:'https://github.com/features/copilot',price:'paid',tier:'S',desc:'Inline autocomplete and agent mode with deep GitHub/PR integration.'},
+    {name:'OpenAI Codex',url:'https://openai.com/codex',price:'freemium',tier:'A',desc:'Cloud-native agentic coding. Runs sandboxed, writes code, pushes to GitHub.'},
+    {name:'Google Jules',url:'https://jules.google.com',price:'freemium',tier:'A',desc:'Google\'s async coding agent. Now out of beta, powered by Gemini.'},
+    {name:'Windsurf',url:'https://codeium.com/windsurf',price:'freemium',tier:'A',desc:'AI IDE with Cascade agent. Strong for full-stack workflows.'},
+    {name:'Cline',url:'https://github.com/cline/cline',price:'free',tier:'A',desc:'Open-source VS Code agent. BYO API key, highly configurable.'},
+    {name:'Continue.dev',url:'https://continue.dev',price:'free',tier:'A',desc:'Open-source coding assistant working with any LLM via MCP.'},
+    {name:'Bolt.new',url:'https://bolt.new',price:'freemium',tier:'A',desc:'Browser-based full-stack app builder. Deploy in one click.'},
+    {name:'Lovable',url:'https://lovable.dev',price:'freemium',tier:'A',desc:'Prompt-to-app builder. Frontend + Supabase backend, no code required.'},
+    {name:'v0 by Vercel',url:'https://v0.dev',price:'freemium',tier:'A',desc:'Prompt to React/Next.js UI components. Deploys directly to Vercel.'},
+    {name:'Replit AI',url:'https://replit.com',price:'freemium',tier:'B',desc:'Cloud IDE with AI. Build, run, and host apps directly in browser.'},
+  ]},
+  { id:'productivity', emoji:'⚡', iconBg:'#102018', title:'Productivity & automation', sub:'AI for workflows, docs, notes, and task management', tools:[
+    {name:'Notion AI',url:'https://notion.so',price:'freemium',tier:'S',desc:'AI inside Notion workspace. Summarize, write, and Q&A your docs.'},
+    {name:'Zapier AI',url:'https://zapier.com',price:'freemium',tier:'S',desc:'No-code automation with AI actions. Connects 6,000+ apps.'},
+    {name:'Microsoft 365 Copilot',url:'https://microsoft.com/copilot',price:'paid',tier:'S',desc:'AI across Word, Excel, PowerPoint, Outlook, and Teams.'},
+    {name:'Claude Cowork',url:'https://claude.ai/download',price:'freemium',tier:'S',desc:'Anthropic\'s desktop AI agent. Reads files, runs scheduled tasks, ships work autonomously. GA April 2026.'},
+    {name:'Make',url:'https://make.com',price:'freemium',tier:'A',desc:'Visual workflow automation with AI modules and agent nodes.'},
+    {name:'N8n',url:'https://n8n.io',price:'freemium',tier:'A',desc:'Open-source automation with AI nodes. Self-host or cloud deploy.'},
+    {name:'ClickUp AI',url:'https://clickup.com',price:'freemium',tier:'A',desc:'AI in project management. Write tasks, summarize threads, auto-plan.'},
+    {name:'Glean',url:'https://glean.com',price:'paid',tier:'A',desc:'Enterprise AI search across all internal tools — Slack, Drive, Jira.'},
+    {name:'Taskade AI',url:'https://taskade.com',price:'freemium',tier:'B',desc:'AI project management with agent workflows and mindmaps.'},
+  ]},
+  { id:'marketing', emoji:'📣', iconBg:'#241a10', title:'Marketing, SEO & sales AI', sub:'Ad copy, lead gen, SEO tools, and CRM AI', tools:[
+    {name:'Salesforce Einstein',url:'https://salesforce.com/artificial-intelligence',price:'paid',tier:'S',desc:'AI-powered CRM. Lead scoring, forecasting, and email generation.'},
+    {name:'HubSpot AI',url:'https://hubspot.com',price:'freemium',tier:'S',desc:'AI across CRM, email, blogging, social, and content strategy.'},
+    {name:'Semrush AI',url:'https://semrush.com',price:'paid',tier:'A',desc:'SEO platform with AI content brief, keyword research, SERP analysis.'},
+    {name:'Surfer SEO',url:'https://surferseo.com',price:'paid',tier:'A',desc:'Live SEO scoring and NLP optimization integrated while you write.'},
+    {name:'AdCreative.ai',url:'https://adcreative.ai',price:'paid',tier:'A',desc:'AI-generated ad creatives with performance scoring built-in.'},
+    {name:'Apollo AI',url:'https://apollo.io',price:'freemium',tier:'A',desc:'Lead gen and AI-drafted outreach with 275M contact database.'},
+    {name:'Lavender',url:'https://lavender.ai',price:'freemium',tier:'B',desc:'AI email coach. Scores cold emails for reply-rate improvement.'},
+  ]},
+  { id:'research', emoji:'🔬', iconBg:'#1a1030', title:'Research, data & analysis AI', sub:'Deep research, data analysis, RAG pipelines', tools:[
+    {name:'Perplexity Deep Research',url:'https://perplexity.ai',price:'freemium',tier:'S',desc:'Multi-step autonomous web research with full sourced reports.'},
+    {name:'ChatGPT Deep Research',url:'https://chatgpt.com',price:'paid',tier:'S',desc:'OpenAI\'s multi-hour research agent. Synthesizes 100s of sources.'},
+    {name:'Elicit',url:'https://elicit.com',price:'freemium',tier:'A',desc:'AI research assistant for academic papers and literature review.'},
+    {name:'Consensus AI',url:'https://consensus.app',price:'freemium',tier:'A',desc:'Search 200M scientific papers and extract AI consensus findings.'},
+    {name:'LlamaIndex',url:'https://llamaindex.ai',price:'free',tier:'A',desc:'RAG framework for building knowledge retrieval pipelines.'},
+    {name:'LangChain',url:'https://langchain.com',price:'free',tier:'A',desc:'Framework for building LLM applications and agentic workflows.'},
+    {name:'Weaviate',url:'https://weaviate.io',price:'freemium',tier:'B',desc:'Open-source vector database for AI-powered search and RAG.'},
+    {name:'Pinecone',url:'https://pinecone.io',price:'freemium',tier:'B',desc:'Managed vector database with fast similarity search at scale.'},
+    {name:'Cohere',url:'https://cohere.com',price:'freemium',tier:'A',desc:'Enterprise LLMs for RAG and tool use. 100+ language support.'},
+  ]},
+  { id:'agents', emoji:'🤖', iconBg:'#240f0f', title:'Autonomous AI agents', sub:'Multi-step task execution and orchestration', tools:[
+    {name:'ChatGPT Operator',url:'https://chatgpt.com',price:'paid',tier:'S',desc:'OpenAI\'s computer-use agent. Books, browses, fills forms autonomously.'},
+    {name:'Manus AI',url:'https://manus.im',price:'freemium',tier:'S',desc:'Action engine. Creates slides, builds sites, automates multi-step tasks.'},
+    {name:'Claude Computer Use',url:'https://claude.ai',price:'paid',tier:'A',desc:'Anthropic\'s computer-use API. Controls browser and desktop autonomously.'},
+    {name:'Google Project Mariner',url:'https://deepmind.google',price:'freemium',tier:'A',desc:'Chrome browser automation agent from Google DeepMind.'},
+    {name:'Microsoft Agent 365',url:'https://microsoft.com',price:'paid',tier:'A',desc:'Enterprise agent control plane inside M365, launched May 2026.'},
+    {name:'CrewAI',url:'https://crewai.com',price:'freemium',tier:'A',desc:'Multi-agent orchestration framework with role-based agent crews.'},
+    {name:'AutoGPT',url:'https://autogpt.net',price:'free',tier:'B',desc:'Open-source agent framework for goal-based task planning and execution.'},
+    {name:'Vertex AI Agents',url:'https://cloud.google.com/vertex-ai',price:'paid',tier:'A',desc:'Google Cloud managed agent platform with grounding and tool calling.'},
+    {name:'AWS Bedrock Agents',url:'https://aws.amazon.com/bedrock',price:'paid',tier:'A',desc:'Amazon\'s managed agents with knowledge bases and tool calling.'},
+  ]},
+  { id:'enterprise', emoji:'🏢', iconBg:'#101828', title:'Enterprise & ML infrastructure', sub:'Industry-specific AI and ML platforms', tools:[
+    {name:'Azure AI Foundry',url:'https://azure.microsoft.com/ai',price:'paid',tier:'S',desc:'Microsoft\'s enterprise AI platform. Deploy, fine-tune, and govern models.'},
+    {name:'Google Vertex AI',url:'https://cloud.google.com/vertex-ai',price:'paid',tier:'S',desc:'GCP\'s unified ML and AI platform. Gemini API, agents, and pipelines.'},
+    {name:'AWS SageMaker',url:'https://aws.amazon.com/sagemaker',price:'paid',tier:'S',desc:'Amazon\'s end-to-end ML platform. Train, deploy, and monitor at scale.'},
+    {name:'Hugging Face',url:'https://huggingface.co',price:'freemium',tier:'S',desc:'Model hub with 900K+ models. Inference API, Spaces, and fine-tuning.'},
+    {name:'Databricks Mosaic AI',url:'https://databricks.com',price:'paid',tier:'A',desc:'Enterprise data and AI platform with model serving and vector search.'},
+    {name:'Harvey AI',url:'https://harvey.ai',price:'paid',tier:'A',desc:'AI for law firms. Contract review, legal research, and case work.'},
+    {name:'Scale AI',url:'https://scale.com',price:'paid',tier:'A',desc:'Data labeling, RLHF, and AI evaluation platform.'},
+    {name:'Weights & Biases',url:'https://wandb.ai',price:'freemium',tier:'A',desc:'MLOps platform. Experiment tracking, model registry, and evals.'},
+    {name:'Replicate',url:'https://replicate.com',price:'freemium',tier:'A',desc:'Run open-source AI models via API on fast GPU serverless infrastructure.'},
+  ]},
 ];
 
+// ── MODAL ──────────────────────────────────────────
+const overlay = document.getElementById('modal-overlay');
+const modalName = document.getElementById('modal-name');
+const modalCat = document.getElementById('modal-cat');
+const modalBody = document.getElementById('modal-body');
+
+document.getElementById('modal-close').onclick = closeModal;
+overlay.addEventListener('click', e => { if(e.target === overlay) closeModal(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+function closeModal() {
+  overlay.classList.remove('open');
+}
+
+async function openAbout(tool, catTitle, e) {
+  e.preventDefault(); e.stopPropagation();
+  modalName.textContent = tool.name;
+  modalCat.textContent = catTitle;
+  modalBody.innerHTML = `<div class="modal-loading"><div class="modal-spinner"></div><div class="modal-loading-text">Fetching AI-powered details for ${tool.name}…</div></div>`;
+  overlay.classList.add('open');
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: 'You are a concise AI tools expert. Respond ONLY with a JSON object — no markdown, no backticks, no extra text. The JSON must have exactly these keys: "what" (2 sentences what it does), "bestFor" (2 sentences who it is best for), "pricing" (1-2 sentences on pricing tiers), "topFeatures" (array of exactly 4 short feature strings, each under 8 words), "prosAndCons" (object with "pros" array of 3 items and "cons" array of 2 items, each under 10 words).',
+        messages: [{ role: 'user', content: `Give me details about the AI tool: ${tool.name}. Category: ${catTitle}. Short description I have: ${tool.desc}` }]
+      })
+    });
+
+    const data = await response.json();
+    const raw = data.content.map(b => b.text || '').join('');
+    const clean = raw.replace(/```json|```/g,'').trim();
+    const info = JSON.parse(clean);
+
+    const priceClass = tool.price==='free'?'badge-free':tool.price==='paid'?'badge-paid':'badge-freemium';
+    const tierClass = 'tier-'+tool.tier.toLowerCase();
+
+    modalBody.innerHTML = `
+      <div class="modal-badges">
+        <span class="badge badge-tier ${tierClass}">Tier ${tool.tier}</span>
+        <span class="badge ${priceClass}">${tool.price}</span>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-label">What it does</div>
+        <div class="modal-section-text">${info.what}</div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-label">Best for</div>
+        <div class="modal-section-text">${info.bestFor}</div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-label">Pricing</div>
+        <div class="modal-section-text">${info.pricing}</div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-label">Top features</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:4px">
+          ${info.topFeatures.map(f=>`<div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:12px;color:var(--text-secondary);">✦ ${f}</div>`).join('')}
+        </div>
+      </div>
+
+      <div class="modal-section">
+        <div class="modal-section-label">Pros & Cons</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px">
+          <div style="background:rgba(0,212,170,0.05);border:1px solid rgba(0,212,170,0.15);border-radius:8px;padding:10px 12px;">
+            ${info.prosAndCons.pros.map(p=>`<div style="font-size:12px;color:#00d4aa;margin-bottom:5px;">✓ ${p}</div>`).join('')}
+          </div>
+          <div style="background:rgba(255,120,80,0.05);border:1px solid rgba(255,120,80,0.15);border-radius:8px;padding:10px 12px;">
+            ${info.prosAndCons.cons.map(c=>`<div style="font-size:12px;color:#ff8860;margin-bottom:5px;">✗ ${c}</div>`).join('')}
+          </div>
+        </div>
+      </div>
+
+      <a class="modal-visit-btn" href="${tool.url}" target="_blank" rel="noopener noreferrer">
+        Visit ${tool.name} ↗
+      </a>
+      <div class="modal-ai-badge"><span class="modal-ai-dot"></span> Details generated by Claude AI</div>
+    `;
+  } catch(err) {
+    const priceClass = tool.price==='free'?'badge-free':tool.price==='paid'?'badge-paid':'badge-freemium';
+    const tierClass = 'tier-'+tool.tier.toLowerCase();
+    modalBody.innerHTML = `
+      <div class="modal-badges">
+        <span class="badge badge-tier ${tierClass}">Tier ${tool.tier}</span>
+        <span class="badge ${priceClass}">${tool.price}</span>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-label">About</div>
+        <div class="modal-section-text">${tool.desc}</div>
+      </div>
+      <a class="modal-visit-btn" href="${tool.url}" target="_blank" rel="noopener noreferrer">Visit ${tool.name} ↗</a>
+    `;
+  }
+}
+
+// ── FILTERS & RENDER ───────────────────────────────
 let activeFilter = 'all';
 let searchQuery = '';
 
-// Build filters
 function buildFilters() {
   const container = document.getElementById('filters');
   const allBtn = document.createElement('button');
@@ -806,7 +520,6 @@ function buildFilters() {
   allBtn.innerHTML = `All <span class="pill-count">${CATS.reduce((a,c)=>a+c.tools.length,0)}</span>`;
   allBtn.onclick = () => setFilter('all');
   container.appendChild(allBtn);
-
   CATS.forEach(cat => {
     const btn = document.createElement('button');
     btn.className = 'filter-pill';
@@ -839,13 +552,9 @@ function render() {
 
   CATS.forEach((cat, catIdx) => {
     if (activeFilter !== 'all' && activeFilter !== cat.id) return;
-
     const tools = cat.tools.filter(t =>
-      !q ||
-      t.name.toLowerCase().includes(q) ||
-      t.desc.toLowerCase().includes(q) ||
-      cat.title.toLowerCase().includes(q) ||
-      t.price.toLowerCase().includes(q) ||
+      !q || t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q) ||
+      cat.title.toLowerCase().includes(q) || t.price.toLowerCase().includes(q) ||
       ('tier ' + t.tier.toLowerCase()).includes(q)
     );
     if (!tools.length) return;
@@ -854,10 +563,9 @@ function render() {
     const sec = document.createElement('div');
     sec.className = 'cat-section';
     sec.style.animationDelay = (catIdx * 0.05) + 's';
-
     sec.innerHTML = `
       <div class="cat-header">
-        <div class="cat-icon-wrap" style="background:${cat.iconBg}; font-size:18px;">${cat.emoji}</div>
+        <div class="cat-icon-wrap" style="background:${cat.iconBg};font-size:18px">${cat.emoji}</div>
         <div class="cat-meta">
           <div class="cat-title">${cat.title}</div>
           <div class="cat-sub">${cat.sub}</div>
@@ -870,65 +578,53 @@ function render() {
 
     const tg = sec.querySelector(`#tg-${cat.id}`);
     tools.forEach(t => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'tool-card-wrapper';
+
+      const priceClass = t.price==='free'?'badge-free':t.price==='paid'?'badge-paid':'badge-freemium';
+      const tierClass = 'tier-'+t.tier.toLowerCase();
+      const hn = highlight(t.name, q);
+      const hd = highlight(t.desc, q);
+
       const card = document.createElement('a');
       card.className = 'tool-card';
       card.href = t.url;
       card.target = '_blank';
       card.rel = 'noopener noreferrer';
-
-      const priceClass = t.price === 'free' ? 'badge-free' : t.price === 'paid' ? 'badge-paid' : 'badge-freemium';
-      const tierClass = 'tier-' + t.tier.toLowerCase();
-      const hn = highlight(t.name, q);
-      const hd = highlight(t.desc, q);
-
       card.innerHTML = `
         <div class="tool-card-top">
           <div class="tool-name">${hn}</div>
-          <div class="tool-badges">
-            <span class="badge badge-tier ${tierClass}">${t.tier}</span>
-          </div>
+          <div class="tool-badges"><span class="badge badge-tier ${tierClass}">${t.tier}</span></div>
         </div>
         <div class="tool-desc">${hd}</div>
         <div class="tool-card-footer">
-          <span class="tool-link-hint">
-            Visit site <span class="tool-link-arrow">↗</span>
-          </span>
+          <span class="tool-link-hint">Visit site <span class="tool-link-arrow">↗</span></span>
           <span class="badge ${priceClass}">${t.price}</span>
         </div>
       `;
-      tg.appendChild(card);
+
+      const aboutBtn = document.createElement('button');
+      aboutBtn.className = 'about-btn';
+      aboutBtn.title = `About ${t.name}`;
+      aboutBtn.setAttribute('aria-label', `About ${t.name}`);
+      aboutBtn.textContent = 'i';
+      aboutBtn.addEventListener('click', (e) => openAbout(t, cat.title, e));
+
+      wrapper.appendChild(card);
+      wrapper.appendChild(aboutBtn);
+      tg.appendChild(wrapper);
     });
   });
 
-  const hasResults = totalShown > 0;
-  noRes.style.display = hasResults ? 'none' : 'block';
-
-  if (q && hasResults) {
-    countEl.textContent = `${totalShown} tool${totalShown !== 1 ? 's' : ''} match "${q}"`;
-  } else if (q && !hasResults) {
-    countEl.textContent = '';
-  } else {
-    countEl.textContent = '';
-  }
+  noRes.style.display = totalShown > 0 ? 'none' : 'block';
+  countEl.textContent = (q && totalShown > 0) ? `${totalShown} tool${totalShown!==1?'s':''} match "${q}"` : '';
 }
 
-// Search input
 const searchEl = document.getElementById('search');
-searchEl.addEventListener('input', e => {
-  searchQuery = e.target.value;
-  render();
-});
-
-// Keyboard shortcut
+searchEl.addEventListener('input', e => { searchQuery = e.target.value; render(); });
 document.addEventListener('keydown', e => {
-  if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-    e.preventDefault();
-    searchEl.focus();
-    searchEl.select();
-  }
-  if (e.key === 'Escape') {
-    searchEl.blur();
-  }
+  if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); searchEl.focus(); searchEl.select(); }
+  if (e.key === 'Escape' && !overlay.classList.contains('open')) searchEl.blur();
 });
 
 buildFilters();
