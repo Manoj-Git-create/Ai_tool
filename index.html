@@ -335,7 +335,7 @@
     AI Search
   </a>
   <div class="nav-right">
-    <span class="nav-badge">May 2026 · 150+ tools</span>
+    <span class="nav-badge">May 2026 · 175+ tools</span>
     <button class="nav-theme-btn" id="theme-btn" title="Toggle light/dark mode">🌙</button>
   </div>
 </nav>
@@ -343,15 +343,15 @@
 <div class="wrapper">
   <section class="hero">
     <div class="hero-particles" id="hero-particles"></div>
-    <div class="hero-eyebrow"><span>●</span> Live Directory — Updated May 2026</div>
+    <div class="hero-eyebrow"><span>●</span> Live Directory — Updated May 31, 2026</div>
     <h1>Find the right<br><span>AI tool</span><br>for anything</h1>
     <p>150+ AI tools organized from simple chat assistants to enterprise-grade problem solvers. Click any tool to visit its website, or tap ⓘ to learn about it.</p>
     <div class="stats-row">
-      <div class="stat-chip"><strong>150+</strong> tools indexed</div>
+      <div class="stat-chip"><strong>175+</strong> tools indexed</div>
       <div class="stat-chip-dot"></div>
       <div class="stat-chip"><strong>12</strong> categories</div>
       <div class="stat-chip-dot"></div>
-      <div class="stat-chip"><strong>60+</strong> free or freemium</div>
+      <div class="stat-chip"><strong>70+</strong> free or freemium</div>
     </div>
     <!-- Feature 7: AI Task bar -->
     <div class="ai-bar">
@@ -414,6 +414,10 @@ const CATS = [
     {name:'Microsoft Copilot',url:'https://copilot.microsoft.com',price:'freemium',tier:'A',desc:'GPT-5 wrapped in Microsoft 365 with Office, Teams, and Edge access.',tags:['#chat','#enterprise','#productivity']},
     {name:'Pi (Inflection)',url:'https://pi.ai',price:'free',tier:'B',desc:'Empathetic conversational AI focused on personal coaching and journaling.',tags:['#chat','#free','#mobile']},
     {name:'HuggingChat',url:'https://huggingface.co/chat',price:'free',tier:'B',desc:'Open-source chat running Llama, Mistral, and other open models.',tags:['#chat','#opensource','#free']},
+    {name:'DeepSeek V4',url:'https://chat.deepseek.com',price:'free',tier:'S',desc:'🆕 Chinese lab\'s flagship Apr 2026 model. MIT license, 1M token context, native multimodal (text, image, video). V4 Pro scores 80.6% SWE-bench at $0.27/M tokens — 5–55x cheaper than western models.',tags:['#chat','#coding','#free','#opensource']},
+    {name:'Kimi AI',url:'https://kimi.ai',price:'freemium',tier:'A',desc:'🆕 Moonshot AI\'s K2.6 model (Apr 2026). 1T parameter MoE, coordinates up to 100 sub-agents in parallel, native multimodal. Beats GPT-5.2 on HLE-Full reasoning benchmarks. Strong for research and coding.',tags:['#chat','#agents','#coding']},
+    {name:'Gemma 4',url:'https://ai.google.dev/gemma',price:'free',tier:'A',desc:'🆕 Google\'s open-source model family (Apr 2026). Apache 2.0 license — zero commercial restrictions. 2.3B to 31B params, natively multimodal (text, image, video, audio). 31B ranks top 3 globally on Arena AI.',tags:['#chat','#free','#opensource','#multimodal']},
+    {name:'Llama 4 Scout',url:'https://llama.meta.com',price:'free',tier:'A',desc:'🆕 Meta\'s open-weight model (Apr 5, 2026). Industry-leading 10M token context window — the longest of any production model. Natively multimodal MoE architecture. Apache 2.0 license, free to self-host.',tags:['#chat','#free','#opensource','#multimodal']},
   ]},
   { id:'search', emoji:'🔍', iconBg:'#1a2040', title:'AI-powered search & research', sub:'Real-time web search with cited answers', tools:[
     {name:'Perplexity AI',url:'https://perplexity.ai',price:'freemium',tier:'S',desc:'Best AI answer engine. Cites sources, real-time web, Deep Research mode.',tags:['#search','#research','#realtime']},
@@ -423,6 +427,8 @@ const CATS = [
     {name:'Exa AI',url:'https://exa.ai',price:'freemium',tier:'B',desc:'Neural search API for semantic web retrieval, popular with developers.',tags:['#search','#api','#coding']},
     {name:'Tavily',url:'https://tavily.com',price:'freemium',tier:'B',desc:'Search API purpose-built for LLM agents and RAG pipelines.',tags:['#search','#api','#agents']},
     {name:'NotebookLM',url:'https://notebooklm.google.com',price:'free',tier:'A',desc:'Google\'s document-grounded AI. Chat with your PDFs, notes, and sources.',tags:['#research','#free','#productivity']},
+    {name:'Perplexity Comet',url:'https://perplexity.ai/comet',price:'free',tier:'S',desc:'🆕 Perplexity\'s AI-native browser (free since Mar 18, 2026). Synthesizes real-time web research into cited reports as you browse. Agentic tab assistance, voice mode, multi-step task automation and background assistants.',tags:['#search','#realtime','#agents','#free']},
+    {name:'Mercury 2',url:'https://inceptionlabs.ai',price:'freemium',tier:'B',desc:'🆕 Inception Labs (Feb 2026). Uses a diffusion-based architecture instead of token-by-token generation — architecturally different from all other models. Faster generation for long-form content.',tags:['#search','#chat']},
   ]},
   { id:'writing', emoji:'✍️', iconBg:'#2a1c10', title:'Writing & content creation', sub:'Drafting, editing, SEO, and long-form content', tools:[
     {name:'Grammarly',url:'https://grammarly.com',price:'freemium',tier:'S',desc:'Grammar, tone, clarity editing with deep integration across the web.',tags:['#writing','#editing','#productivity']},
@@ -434,6 +440,8 @@ const CATS = [
     {name:'Anyword',url:'https://anyword.com',price:'paid',tier:'B',desc:'AI writing with performance prediction scores for marketers.',tags:['#writing','#marketing']},
     {name:'Quillbot',url:'https://quillbot.com',price:'freemium',tier:'B',desc:'Paraphrasing, summarizing, and grammar check. Popular with students.',tags:['#writing','#editing','#free']},
     {name:'Wordtune',url:'https://wordtune.com',price:'freemium',tier:'B',desc:'Rewrite sentences for clarity, tone, and appropriate length.',tags:['#writing','#editing']},
+    {name:'Gamma AI',url:'https://gamma.app',price:'freemium',tier:'A',desc:'🆕 AI-powered presentation and doc builder. Type a prompt, get a polished deck in seconds. One-click design refresh, web publishing, and analytics. Best alternative to PowerPoint for fast visual storytelling.',tags:['#writing','#design','#nocode']},
+    {name:'Napkin AI',url:'https://napkin.ai',price:'freemium',tier:'A',desc:'🆕 Turns plain text into visual diagrams, charts, and infographics automatically. Paste your text, Napkin generates concept maps, flowcharts, and timelines. No design skills needed.',tags:['#writing','#design','#nocode']},
   ]},
   { id:'image', emoji:'🎨', iconBg:'#261030', title:'Image & design generation', sub:'Text-to-image, design tools, and visual editing', tools:[
     {name:'Midjourney',url:'https://midjourney.com',price:'paid',tier:'S',desc:'Best aesthetic image quality. v7 model as of 2026. Discord and web app.',tags:['#image','#art','#design']},
@@ -467,6 +475,7 @@ const CATS = [
     {name:'Murf AI',url:'https://murf.ai',price:'freemium',tier:'A',desc:'Studio-quality TTS voiceover for videos and presentations.',tags:['#audio','#voice','#marketing']},
     {name:'Adobe Podcast AI',url:'https://podcast.adobe.com',price:'free',tier:'A',desc:'Mic-quality audio enhancement and noise removal in the browser.',tags:['#audio','#free','#podcast']},
     {name:'Krisp',url:'https://krisp.ai',price:'freemium',tier:'B',desc:'Real-time noise cancellation and AI meeting assistant.',tags:['#audio','#productivity','#meeting']},
+    {name:'Cohere Transcribe',url:'https://cohere.com',price:'freemium',tier:'A',desc:'🆕 Cohere\'s enterprise-grade speech transcription API (Apr 2026). Supports 100+ languages with speaker diarization and low-latency streaming. Built for financial, legal, and healthcare use cases.',tags:['#audio','#api','#enterprise']},
   ]},
   { id:'coding', emoji:'💻', iconBg:'#221010', title:'Coding & development AI', sub:'Code assistants, IDE agents, and app builders', tools:[
     {name:'Claude Code',url:'https://claude.ai/code',price:'freemium',tier:'S',desc:'Top-ranked terminal agent. 80.8% SWE-bench. Full repo autonomy via CLI.',tags:['#coding','#agents','#api']},
@@ -481,6 +490,8 @@ const CATS = [
     {name:'Lovable',url:'https://lovable.dev',price:'freemium',tier:'A',desc:'Prompt-to-app builder. Frontend + Supabase backend, no code required.',tags:['#coding','#nocode']},
     {name:'v0 by Vercel',url:'https://v0.dev',price:'freemium',tier:'A',desc:'Prompt to React/Next.js UI components. Deploys directly to Vercel.',tags:['#coding','#design','#nocode']},
     {name:'Replit AI',url:'https://replit.com',price:'freemium',tier:'B',desc:'Cloud IDE with AI. Build, run, and host apps directly in browser.',tags:['#coding','#nocode','#free']},
+    {name:'Kimi Code K2.6',url:'https://kimi.ai',price:'freemium',tier:'A',desc:'🆕 Moonshot AI\'s coding-specialized model (Apr 2026). 87 on coding benchmarks — competitive with western frontier models at materially lower API cost. Strong for Indian developers and cost-sensitive startups.',tags:['#coding','#api','#agents']},
+    {name:'Google Gemma 4 Code',url:'https://ai.google.dev/gemma',price:'free',tier:'A',desc:'🆕 Gemma 4\'s coding capability scores Codeforces ELO 2,150 vs Gemma 3\'s 110 — a 20x improvement. Apache 2.0 license, runs locally. Available on Hugging Face, Ollama, and Google AI Studio.',tags:['#coding','#free','#opensource']},
   ]},
   { id:'productivity', emoji:'⚡', iconBg:'#102018', title:'Productivity & automation', sub:'AI for workflows, docs, notes, and task management', tools:[
     {name:'Notion AI',url:'https://notion.so',price:'freemium',tier:'S',desc:'AI inside Notion workspace. Summarize, write, and Q&A your docs.',tags:['#productivity','#writing','#nocode']},
@@ -492,6 +503,8 @@ const CATS = [
     {name:'ClickUp AI',url:'https://clickup.com',price:'freemium',tier:'A',desc:'AI in project management. Write tasks, summarize threads, auto-plan.',tags:['#productivity','#enterprise']},
     {name:'Glean',url:'https://glean.com',price:'paid',tier:'A',desc:'Enterprise AI search across all internal tools — Slack, Drive, Jira.',tags:['#productivity','#enterprise','#search']},
     {name:'Taskade AI',url:'https://taskade.com',price:'freemium',tier:'B',desc:'AI project management with agent workflows and mindmaps.',tags:['#productivity','#agents','#nocode']},
+    {name:'Motion AI',url:'https://usemotion.com',price:'paid',tier:'A',desc:'🆕 Calendar-first AI project manager. Analyzes tasks, deadlines, and priorities and automatically time-blocks your perfect day. Integrates AI Docs and AI Note Taker. Used by 30,000+ teams.',tags:['#productivity','#meeting','#nocode']},
+    {name:'Gamma AI',url:'https://gamma.app',price:'freemium',tier:'A',desc:'🆕 AI presentation builder. Prompt to polished deck in seconds. One-click redesign, real-time collaboration, and web publishing with analytics built in.',tags:['#productivity','#design','#writing','#nocode']},
   ]},
   { id:'marketing', emoji:'📣', iconBg:'#241a10', title:'Marketing, SEO & sales AI', sub:'Ad copy, lead gen, SEO tools, and CRM AI', tools:[
     {name:'Salesforce Einstein',url:'https://salesforce.com/artificial-intelligence',price:'paid',tier:'S',desc:'AI-powered CRM. Lead scoring, forecasting, and email generation.'},
@@ -521,6 +534,8 @@ const CATS = [
     {name:'Microsoft Agent 365',url:'https://microsoft.com',price:'paid',tier:'A',desc:'Enterprise agent control plane inside M365, launched May 2026.'},
     {name:'CrewAI',url:'https://crewai.com',price:'freemium',tier:'A',desc:'Multi-agent orchestration framework with role-based agent crews.'},
     {name:'AutoGPT',url:'https://autogpt.net',price:'free',tier:'B',desc:'Open-source agent framework for goal-based task planning and execution.'},
+    {name:'Kimi Agent Swarm',url:'https://kimi.ai',price:'freemium',tier:'A',desc:'🆕 Moonshot AI\'s multi-agent system (2026). Coordinates up to 100 AI sub-agents in parallel, completing complex tasks 4.5x faster. Reads screenshots, generates code, handles large-scale data analysis.',tags:['#agents','#coding','#research']},
+    {name:'Perplexity Computer',url:'https://perplexity.ai',price:'paid',tier:'A',desc:'🆕 Perplexity\'s multi-agent system (2026). Access to 20+ models, hundreds of connectors, and a dedicated Codex coding subagent. Generates PowerPoint, spreadsheets, and dashboards from research prompts.',tags:['#agents','#research','#productivity']},
     {name:'Vertex AI Agents',url:'https://cloud.google.com/vertex-ai',price:'paid',tier:'A',desc:'Google Cloud managed agent platform with grounding and tool calling.'},
     {name:'AWS Bedrock Agents',url:'https://aws.amazon.com/bedrock',price:'paid',tier:'A',desc:'Amazon\'s managed agents with knowledge bases and tool calling.'},
   ]},
@@ -534,6 +549,9 @@ const CATS = [
     {name:'Scale AI',url:'https://scale.com',price:'paid',tier:'A',desc:'Data labeling, RLHF, and AI evaluation platform.'},
     {name:'Weights & Biases',url:'https://wandb.ai',price:'freemium',tier:'A',desc:'MLOps platform. Experiment tracking, model registry, and evals.'},
     {name:'Replicate',url:'https://replicate.com',price:'freemium',tier:'A',desc:'Run open-source AI models via API on fast GPU serverless infrastructure.'},
+    {name:'Microsoft MAI Models',url:'https://azure.microsoft.com/ai',price:'paid',tier:'A',desc:'🆕 Microsoft\'s first in-house built LLMs (Apr 2026). Historic shift — Microsoft previously distributed OpenAI models. MAI models power Copilot Wave 3 with multi-model orchestration across Claude, GPT, and MAI.',tags:['#enterprise','#api','#coding']},
+    {name:'Qwen 3.6',url:'https://qwenlm.github.io',price:'free',tier:'A',desc:'🆕 Alibaba\'s Qwen 3.6-35B-A3B runs on a single RTX 4090. Apache 2.0 license. 73.4% SWE-bench Verified — the most commercially permissive high-performance self-hostable model available.',tags:['#enterprise','#free','#opensource','#coding']},
+    {name:'GLM-5.1',url:'https://zhipuai.cn',price:'freemium',tier:'A',desc:'🆕 Zhipu AI\'s model (2026). Leads open-weight models on SWE-bench Pro at 58.4%. Strong long-context performance and historic coding benchmark leadership. Available via API and Hugging Face.',tags:['#enterprise','#coding','#api']},
   ]},
 ];
 
